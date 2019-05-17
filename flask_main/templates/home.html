@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+  Welcome Home
+  {% if current_user.is_authenticated %}
+    <a href="{{url_for('logout')}}">logout</a>
+    <a href="{{url_for('account')}}">Account</a>
+  {% else %}
+    <a href="{{url_for('register')}}">Register</a>
+    <a href="{{url_for('login')}}">Login</a>
+  {% endif %}
+{% endblock content %}
